@@ -1,0 +1,61 @@
+name: Continuous Integration, Delivery and Deployment with Github Actions and .NET 10
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Create SQL Server Container
+      run: |
+        docker run -d --name sqlserver_test \
+          -e "ACCEPT_EULA=Y" \
+          -e "MSSQL_SA_PASSWORD=@Admin123" \
+          -p 1433:1433 \
+          mcr.microsoft.com/mssql/server:2022-latest
+
+        timeout 90s bash -c "until docker exec sqlserver_test /opt/mssql-tools18/bin/sqlcmd -S localhost -U SA -P '@Admin123' -Q 'SELECT 1' -C; do sleep 5; done"
+
+    - name: Create SQL Server Database
+      run: docker exec sqlserver_test /opt/mssql-tools18/bin/sqlcmd -S localhost -U SA -P '@Admin123' -Q "IF DB_ID('asp_net_10_erudio') IS NULL CREATE DATABASE [asp_net_10_erudio]" -C
+
+    - name: Checkout Repository Code
+      uses: actions/checkout@v4
+
+    - name: Login to Docker Hub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
+    
+    - name: Setup .NET 10
+      uses: actions/setup-dotnet@v5
+      with:
+        dotnet-version: '10.0.x'
+    
+    - name: Restore Dependencies
+      run: dotnet restore RestWithASPNET10Erudio.sln
+      working-directory: 01_AfterDockerization/16B_DockerizingOur.NETApp/RestWithASPNET10Erudio
+    
+    - name: Build ASP.NET 10 App
+      run: dotnet build RestWithASPNET10Erudio.sln --configuration Release --no-restore
+      working-directory: 01_AfterDockerization/16B_DockerizingOur.NETApp/RestWithASPNET10Erudio
+    
+    - name: Test ASP.NET 10 App
+      run: dotnet test RestWithASPNET10Erudio.sln --configuration Release --no-build --logger "console;verbosity=detailed"  
+      working-directory: 01_AfterDockerization/16B_DockerizingOur.NETApp/RestWithASPNET10Erudio
+    
+    - name: Docker Compose Build
+      run: docker compose build
+      working-directory: 01_AfterDockerization/16B_DockerizingOur.NETApp/RestWithASPNET10Erudio
+    
+    - name: Push to Docker Hub Container Registry
+      run: |
+        docker tag ${{secrets.DOCKER_USERNAME}}/rest-with-asp-net-10-erudio:latest ${{secrets.DOCKER_USERNAME}}/rest-with-asp-net-10-erudio:${{github.run_id}}
+
+        docker push ${{secrets.DOCKER_USERNAME}}/rest-with-asp-net-10-erudio:latest
+        docker push ${{secrets.DOCKER_USERNAME}}/rest-with-asp-net-10-erudio:${{github.run_id}}
