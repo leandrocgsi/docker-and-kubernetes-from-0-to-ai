@@ -51,29 +51,3 @@ Este é o repositório dos códigos fonte desenvolvidos no curso [Formação Doc
 # [Download e-Book Grátis - Guia Docker](https://pub.erudio.com.br/guia-docker)
 
 [![e-Book Grátis - Guia Docker](https://github.com/leandrocgsi/DockerFromZeroToMastery/blob/master/Images/ebook.png?raw=true)](https://pub.erudio.com.br/guia-docker)
-
----
-
-## [Como Configurar Ambiente de DEV Spring Boot no Windows: Java, Maven, IntelliJ e MySQL Guia Completo](https://www.youtube.com/watch?v=M-0HxNoUeNE)
-
-[![Como Configurar Ambiente de DEV Spring Boot no Windows: Java, Maven, IntelliJ e MySQL Guia Completo](https://img.youtube.com/vi/M-0HxNoUeNE/maxresdefault.jpg)](https://www.youtube.com/watch?v=M-0HxNoUeNE)
-
-## [Como Configurar Ambiente de DEV Spring Boot no Linux: Java, Maven, IntelliJ e MySQL Guia Completo](https://www.youtube.com/watch?v=Wk5645fHrVU)
-
-[![Como Configurar Ambiente de DEV Spring Boot no Linux: Java, Maven, IntelliJ e MySQL Guia Completo](https://img.youtube.com/vi/Wk5645fHrVU/maxresdefault.jpg)](https://www.youtube.com/watch?v=Wk5645fHrVU)
-
-## [Como Configurar Ambiente de DEV ASP.NET no Windows: .NET 10, Visual Studio e SQL Server Guia Completo](https://www.youtube.com/watch?v=dqwARAaweu8)
-
-[![Como Configurar Ambiente de DEV ASP.NET no Windows: .NET 10, Visual Studio e SQL Server Guia Completo](https://img.youtube.com/vi/dqwARAaweu8/maxresdefault.jpg)](https://www.youtube.com/watch?v=dqwARAaweu8)
-
-## [Como Configurar Ambiente de DEV ASP.NET no Linux: .NET 10, Visual Studio e SQL Server Guia Completo](https://www.youtube.com/watch?v=QQlraJMG5pU)
-
-[![Como Configurar Ambiente de DEV ASP.NET no Linux: .NET 10, Visual Studio e SQL Server Guia Completo](https://img.youtube.com/vi/QQlraJMG5pU/maxresdefault.jpg)](https://www.youtube.com/watch?v=QQlraJMG5pU)
-
-## [Como Configurar Ambiente de DEV Spring Kotlin no Windows: Kotlin, IntelliJ e MySQL Guia Completo](https://www.youtube.com/watch?v=DS1dpRb-Z2c)
-
-[![Como Configurar Ambiente de DEV Spring Kotlin no Windows: Kotlin, IntelliJ e MySQL Guia Completo](https://img.youtube.com/vi/DS1dpRb-Z2c/maxresdefault.jpg)](https://www.youtube.com/watch?v=DS1dpRb-Z2c)
-
-## [Como Configurar Ambiente de DEV Spring Kotlin no Linux: Java, Kotlin, IntelliJ e MySQL Guia Completo](https://www.youtube.com/watch?v=i4RsgeUfa64)
-
-[![Como Configurar Ambiente de DEV Spring Kotlin no Linux: Java, Kotlin, IntelliJ e MySQL Guia Completo](https://img.youtube.com/vi/i4RsgeUfa64/maxresdefault.jpg)](https://www.youtube.com/watch?v=i4RsgeUfa64)
