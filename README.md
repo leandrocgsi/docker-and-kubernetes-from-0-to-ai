@@ -60,9 +60,16 @@ O código está organizado por módulo. Módulos puramente teóricos ou que não
 
 | Módulo | Conteúdo |
 |--------|----------|
+| `02` | Tudo o que Você Precisa Saber Antes de Começar no Docker |
+| `03` | Introdução aos Contêineres |
+| `04` | Os Principais Componentes do Docker |
+| `05` | Conhecendo Imagens e Contêineres |
+| `06` | Gerenciamento de Contêineres |
 | `07` | Conhecendo o Dockerfile |
 | `08` | Trabalhando com Docker Registries |
 | `09` | Dockerfile em Detalhes |
+| `10` | Redes no Docker |
+| `11` | Problemas Comuns no Docker e Como Resolvê-los |
 | `12` | Docker Compose |
 | `13` | Dockerizando Apps Java e Kotlin com Spring Boot 3 |
 | `14` | Dockerizando uma API RESTful em ASP.NET 10 / .NET 10 |
@@ -77,6 +84,8 @@ O código está organizado por módulo. Módulos puramente teóricos ou que não
 | `23` | Docker MCP Catalog e MCP Toolkit |
 | `24` | SGBDs em Contêineres (Postgres, SQL Server, MySQL, Oracle) |
 | `25` | Podman, Skopeo e Buildah |
+| `28` | [Apêndice] Instalando e Configurando o Docker no Windows |
+| `29` | [Apêndice] Instalando e Configurando o Docker no Linux |
 
 ---
 
