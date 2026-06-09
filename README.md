@@ -51,3 +51,65 @@ Este é o repositório dos códigos fonte desenvolvidos no curso [Formação Doc
 # [Download e-Book Grátis - Guia Docker](https://pub.erudio.com.br/guia-docker)
 
 [![e-Book Grátis - Guia Docker](https://github.com/leandrocgsi/DockerFromZeroToMastery/blob/master/Images/ebook.png?raw=true)](https://pub.erudio.com.br/guia-docker)
+
+---
+
+# 🗂️ Estrutura do Repositório
+
+O código está organizado por módulo. Módulos puramente teóricos ou que não geram Dockerfile, docker-compose.yml ou código de aplicação não possuem pasta neste repositório.
+
+| Módulo | Conteúdo |
+|--------|----------|
+| `07` | Conhecendo o Dockerfile |
+| `08` | Trabalhando com Docker Registries |
+| `09` | Dockerfile em Detalhes |
+| `12` | Docker Compose |
+| `13` | Dockerizando Apps Java e Kotlin com Spring Boot 3 |
+| `14` | Dockerizando uma API RESTful em ASP.NET 10 / .NET 10 |
+| `15` | Dockerizando uma Aplicação com Node e React JS |
+| `16` | Implantando na Amazon AWS |
+| `17` | Testcontainers |
+| `18` | Minicurso de Kubernetes |
+| `19` | Kubernetes na GCP com Google Kubernetes Engine (GKE) |
+| `20` | Compose Bridge |
+| `21` | Ollama — IA privada no Docker |
+| `22` | Docker Model Runner |
+| `23` | Docker MCP Catalog e MCP Toolkit |
+| `24` | SGBDs em Contêineres (Postgres, SQL Server, MySQL, Oracle) |
+| `25` | Podman, Skopeo e Buildah |
+
+---
+
+# 🚀 O que você vai aprender
+
+- Fundamentos de contêineres, imagens, redes, volumes e Dockerfile
+- Docker Compose para orquestrar múltiplos serviços
+- Dockerização de aplicações reais: **Java/Kotlin com Spring Boot 3**, **ASP.NET 10**, **Node.js + React JS**
+- CI/CD completo com **GitHub Actions** e **Docker Hub**
+- Testes de integração com **Testcontainers** e **REST Assured**
+- **Kubernetes** — Pods, ReplicaSets, Deployments e Services
+- Deploy na **Google Cloud Platform com GKE** e na **Amazon AWS**
+- Conversão de stacks com **Compose Bridge**
+- IA no Docker: rodar **LLMs localmente** com **Ollama** e **Docker Model Runner**
+- Criação, dockerização e publicação de **MCP Servers** com **Docker MCP Toolkit**
+
+---
+
+# ⚡ Como usar este repositório
+
+Cada módulo tem sua própria pasta com o código desenvolvido nas aulas. Entre na pasta do módulo correspondente e acompanhe as aulas.
+
+**Exemplo — subindo a stack Java com Docker Compose:**
+
+```bash
+cd 13-java-spring-boot
+docker compose up -d
+```
+
+**Exemplo — rodando um LLM local com Docker Model Runner:**
+
+```bash
+cd 22-docker-model-runner
+docker compose up -d
+```
+
