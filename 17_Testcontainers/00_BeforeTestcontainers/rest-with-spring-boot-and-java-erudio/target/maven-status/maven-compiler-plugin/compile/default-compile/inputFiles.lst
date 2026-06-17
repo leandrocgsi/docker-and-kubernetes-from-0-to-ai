@@ -1,0 +1,11 @@
+D:\Code\Java\rest-with-spring-boot-and-java-erudio\11_MigrationsWithFlyWay\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\controllers\PersonController.java
+D:\Code\Java\rest-with-spring-boot-and-java-erudio\11_MigrationsWithFlyWay\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\controllers\TestLogController.java
+D:\Code\Java\rest-with-spring-boot-and-java-erudio\11_MigrationsWithFlyWay\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\data\dto\PersonDTO.java
+D:\Code\Java\rest-with-spring-boot-and-java-erudio\11_MigrationsWithFlyWay\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\exception\ExceptionResponse.java
+D:\Code\Java\rest-with-spring-boot-and-java-erudio\11_MigrationsWithFlyWay\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\exception\hadler\CustomEntityResponseHandler.java
+D:\Code\Java\rest-with-spring-boot-and-java-erudio\11_MigrationsWithFlyWay\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\exception\ResourceNotFoundException.java
+D:\Code\Java\rest-with-spring-boot-and-java-erudio\11_MigrationsWithFlyWay\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\mapper\ObjectMapper.java
+D:\Code\Java\rest-with-spring-boot-and-java-erudio\11_MigrationsWithFlyWay\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\model\Person.java
+D:\Code\Java\rest-with-spring-boot-and-java-erudio\11_MigrationsWithFlyWay\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\repository\PersonRepository.java
+D:\Code\Java\rest-with-spring-boot-and-java-erudio\11_MigrationsWithFlyWay\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\services\PersonServices.java
+D:\Code\Java\rest-with-spring-boot-and-java-erudio\11_MigrationsWithFlyWay\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\Startup.java
