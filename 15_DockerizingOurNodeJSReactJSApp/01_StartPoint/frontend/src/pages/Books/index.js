@@ -12,22 +12,22 @@ export default function Books() {
 
     const [books, setBooks] = useState([]);    
     const [page, setPage] = useState(1);
-
-    async function fetchMoreBooks() {
-        const response = await api.get(`book`, {
-            params: {
-                page: page
-            }
-        });
-
-        setBooks([ ...books, ...response.data.books]);
-        setPage(page + 1);
-    }
+    const [total, setTotal] = useState(0);
     
     useEffect(() => {
+        if (total > 0 && books.length === total) {
+            return;
+        }
         fetchMoreBooks();
         // eslint-disable-next-line
     }, []);
+
+    async function fetchMoreBooks() {
+        const response = await api.get(`book`);
+        setTotal(response.data.total);
+        setBooks([ ...books, ...response.data.books]);
+        setPage(page + 1);
+    }
 
     const history = useHistory();
 
