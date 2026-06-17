@@ -1,4 +1,5 @@
 language: node_js
+
 node_js:
   - 14
 before_install:
@@ -10,7 +11,7 @@ before_install:
   - echo "Let's install Node Modules in Back-end!!!"
   - npm install
   - cd ../
-  - echo "We are in Docker Compose dir!"
+  - echo "We are in Docker Compose dir"
 script:
   - docker-compose build
 before_deploy:
@@ -19,14 +20,10 @@ deploy:
   provider: script
   script:
     docker tag node-react-backend:latest $DOCKER_USERNAME/node-react-backend:$TRAVIS_JOB_ID;
-    docker tag node-react-backend:latest $DOCKER_USERNAME/node-react-backend:latest;
-    docker push $DOCKER_USERNAME/node-react-backend:$TRAVIS_JOB_ID;
-    docker push $DOCKER_USERNAME/node-react-backend:latest;    
     docker tag node-react-frontend:latest $DOCKER_USERNAME/node-react-frontend:$TRAVIS_JOB_ID;
-    docker tag node-react-frontend:latest $DOCKER_USERNAME/node-react-frontend:latest;    
-    docker push $DOCKER_USERNAME/node-react-frontend:$TRAVIS_JOB_ID;    
-    docker push $DOCKER_USERNAME/node-react-frontend:latest;
+    docker push $DOCKER_USERNAME/node-react-backend:$TRAVIS_JOB_ID;
+    docker push $DOCKER_USERNAME/node-react-frontend:$TRAVIS_JOB_ID;
   on:
-    branch: main
+    branch: master
 notifications:
   email: false
