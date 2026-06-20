@@ -1,0 +1,56 @@
+#! wordpress-deployment.yaml
+# Generated code, do not edit
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: wordpress
+    namespace: 20-composebridge
+    labels:
+        com.docker.compose.project: 20_composebridge
+        com.docker.compose.service: wordpress
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            com.docker.compose.project: 20_composebridge
+            com.docker.compose.service: wordpress
+    strategy:
+        type: Recreate
+    template:
+        metadata:
+            labels:
+                com.docker.compose.project: 20_composebridge
+                com.docker.compose.service: wordpress
+                com.docker.compose.network.wordpress-network: "true"
+        spec:
+            restartPolicy: Always
+            containers:
+                - name: wordpress
+                  image: wordpress:6.9.4-php8.3-apache
+                  imagePullPolicy: IfNotPresent
+                  env:
+                    - name: TZ
+                      value: "America/Sao_Paulo"
+                    - name: WORDPRESS_DB_HOST
+                      value: "db"
+                    - name: WORDPRESS_DB_NAME
+                      value: "wordpress"
+                    - name: WORDPRESS_DB_PASSWORD
+                      value: "docker"
+                    - name: WORDPRESS_DB_USER
+                      value: "root"
+                  ports:
+                    - name: wordpress-80
+                      containerPort: 80
+                  volumeMounts:
+                    - name: usr-local-etc-php-conf-d-uploads-ini
+                      mountPath: /usr/local/etc/php/conf.d/uploads.ini
+                    - name: var-www-html
+                      mountPath: /var/www/html
+            volumes:
+                - name: usr-local-etc-php-conf-d-uploads-ini
+                  hostPath:
+                    path: D:\Code\Docker\docker-and-kubernetes-from-0-to-ai\20_ComposeBridge\config\php.conf.uploads.ini
+                - name: var-www-html
+                  hostPath:
+                    path: D:\Code\Docker\docker-and-kubernetes-from-0-to-ai\20_ComposeBridge\wp-app

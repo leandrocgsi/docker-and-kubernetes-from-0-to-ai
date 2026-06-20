@@ -1,0 +1,46 @@
+#! db-deployment.yaml
+# Generated code, do not edit
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: db
+    namespace: 20-composebridge
+    labels:
+        com.docker.compose.project: 20_composebridge
+        com.docker.compose.service: db
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            com.docker.compose.project: 20_composebridge
+            com.docker.compose.service: db
+    strategy:
+        type: Recreate
+    template:
+        metadata:
+            labels:
+                com.docker.compose.project: 20_composebridge
+                com.docker.compose.service: db
+                com.docker.compose.network.wordpress-network: "true"
+        spec:
+            restartPolicy: Always
+            containers:
+                - name: db
+                  image: mysql:9.7
+                  imagePullPolicy: IfNotPresent
+                  env:
+                    - name: MYSQL_DATABASE
+                      value: "wordpress"
+                    - name: MYSQL_PASSWORD
+                      value: "docker"
+                    - name: MYSQL_ROOT_PASSWORD
+                      value: "docker"
+                    - name: MYSQL_USER
+                      value: "docker"
+                    - name: TZ
+                      value: "America/Sao_Paulo"
+                  ports:
+                    - name: db-3306
+                      containerPort: 3306
+                    - name: db-33060
+                      containerPort: 33060

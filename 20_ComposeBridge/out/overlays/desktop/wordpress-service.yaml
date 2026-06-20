@@ -1,0 +1,9 @@
+#! wordpress-service.yaml
+# Generated code, do not edit
+apiVersion: v1
+kind: Service
+metadata:
+    name: wordpress-published
+    namespace: 20-composebridge
+spec:
+    type: LoadBalancer

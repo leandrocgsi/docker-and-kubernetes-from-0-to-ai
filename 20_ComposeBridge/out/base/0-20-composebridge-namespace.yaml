@@ -1,0 +1,8 @@
+#! 0-20-composebridge-namespace.yaml
+# Generated code, do not edit
+apiVersion: v1
+kind: Namespace
+metadata:
+    name: 20-composebridge
+    labels:
+        com.docker.compose.project: 20_composebridge

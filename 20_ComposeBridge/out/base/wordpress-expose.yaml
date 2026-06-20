@@ -1,0 +1,18 @@
+#! wordpress-expose.yaml
+# Generated code, do not edit
+apiVersion: v1
+kind: Service
+metadata:
+    name: wordpress
+    namespace: 20-composebridge
+    labels:
+        com.docker.compose.project: 20_composebridge
+        com.docker.compose.service: wordpress
+spec:
+    selector:
+        com.docker.compose.project: 20_composebridge
+        com.docker.compose.service: wordpress
+    ports:
+        - name: wordpress-80
+          port: 80
+          targetPort: wordpress-80
