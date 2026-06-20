@@ -4,13 +4,13 @@ apiVersion: v1
 kind: Service
 metadata:
     name: wordpress-published
-    namespace: 20-composebridge
+    namespace: stack-wordpress
     labels:
-        com.docker.compose.project: 20_composebridge
+        com.docker.compose.project: stack-wordpress
         com.docker.compose.service: wordpress
 spec:
     selector:
-        com.docker.compose.project: 20_composebridge
+        com.docker.compose.project: stack-wordpress
         com.docker.compose.service: wordpress
     ports:
         - name: wordpress-80

@@ -4,24 +4,23 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
     name: db
-    namespace: 20-composebridge
+    namespace: stack-wordpress
     labels:
-        com.docker.compose.project: 20_composebridge
+        com.docker.compose.project: stack-wordpress
         com.docker.compose.service: db
 spec:
     replicas: 1
     selector:
         matchLabels:
-            com.docker.compose.project: 20_composebridge
+            com.docker.compose.project: stack-wordpress
             com.docker.compose.service: db
     strategy:
         type: Recreate
     template:
         metadata:
             labels:
-                com.docker.compose.project: 20_composebridge
-                com.docker.compose.service: db
-                com.docker.compose.network.wordpress-network: "true"
+                com.docker.compose.project: stack-wordpress
+                com.docker.compose.service: db                
         spec:
             restartPolicy: Always
             containers:
@@ -42,5 +41,5 @@ spec:
                   ports:
                     - name: db-3306
                       containerPort: 3306
-                    - name: db-33060
-                      containerPort: 33060
+                    - name: db-30336
+                      containerPort: 30336

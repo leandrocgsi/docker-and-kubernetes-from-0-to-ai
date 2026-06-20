@@ -3,11 +3,12 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-    - 0-20-composebridge-namespace.yaml
+    - 0-stack-wordpress-namespace.yaml
+    - php-conf-configmap.yaml
+    - wp-app-pvc.yaml
     - db-deployment.yaml
     - db-expose.yaml
     - db-service.yaml
     - wordpress-deployment.yaml
     - wordpress-expose.yaml
-    - wordpress-network-network-policy.yaml
     - wordpress-service.yaml

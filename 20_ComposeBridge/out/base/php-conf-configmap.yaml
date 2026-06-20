@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: php-uploads-config
+  namespace: stack-wordpress
+data:
+  uploads.ini: ""

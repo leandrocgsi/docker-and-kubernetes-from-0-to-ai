@@ -1,13 +1,16 @@
-# check if there is at least one published port
-
-#! db-service.yaml
-# Generated code, do not edit
 apiVersion: v1
 kind: Service
 metadata:
     name: db-published
-    namespace: 20-composebridge
+    namespace: stack-wordpress
 spec:
-    type: LoadBalancer
-
-# check if there is at least one published port
+    type: NodePort
+    selector:
+      com.docker.compose.project: stack-wordpress
+      com.docker.compose.service: db
+    ports:
+      - name: db-3306
+        port: 3306
+        protocol: TCP
+        targetPort: db-3306
+        nodePort: 30336

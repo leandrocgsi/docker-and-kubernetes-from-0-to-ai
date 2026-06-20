@@ -1,9 +1,16 @@
-#! wordpress-service.yaml
-# Generated code, do not edit
 apiVersion: v1
 kind: Service
 metadata:
     name: wordpress-published
-    namespace: 20-composebridge
+    namespace: stack-wordpress
 spec:
-    type: LoadBalancer
+    type: NodePort
+    selector:
+      com.docker.compose.project: stack-wordpress
+      com.docker.compose.service: wordpress
+    ports:
+      - name: wordpress-80
+        port: 80
+        protocol: TCP
+        targetPort: wordpress-80
+        nodePort: 30080

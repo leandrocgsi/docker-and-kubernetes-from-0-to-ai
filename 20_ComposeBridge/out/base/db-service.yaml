@@ -6,13 +6,13 @@ apiVersion: v1
 kind: Service
 metadata:
     name: db-published
-    namespace: 20-composebridge
+    namespace: stack-wordpress
     labels:
-        com.docker.compose.project: 20_composebridge
+        com.docker.compose.project: stack-wordpress
         com.docker.compose.service: db
 spec:
     selector:
-        com.docker.compose.project: 20_composebridge
+        com.docker.compose.project: stack-wordpress
         com.docker.compose.service: db
     ports:
         - name: db-3308
