@@ -1,0 +1,17 @@
+services:
+ 
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: open-webui
+    ports:
+      - 3000:8080
+    volumes:
+      - open_webui_dmr_data:/app/backend/data
+    environment:
+      OPENAI_API_BASE_URL: http://host.docker.internal:12434/engines/llama.cpp/v1
+      OPENAI_API_KEY: ignored
+      ENABLE_OLLAMA_API: false
+    restart: unless-stopped
+
+volumes:
+  open_webui_dmr_data:
