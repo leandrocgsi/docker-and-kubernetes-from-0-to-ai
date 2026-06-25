@@ -1,0 +1,8 @@
+services:
+  filesystem:
+    image: mcp/filesystem
+    command: ["/my-super-special-files"]
+    volumes:
+      - ./my-super-special-files:/my-super-special-files
+    stdin_open: true
+    tty: false

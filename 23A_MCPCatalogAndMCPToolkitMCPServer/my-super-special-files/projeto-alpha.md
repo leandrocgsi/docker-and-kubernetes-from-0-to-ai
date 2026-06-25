@@ -8,6 +8,7 @@ Migrar o serviço de autenticação para microsserviços.
 - [ ] Definir contratos de API entre serviços
 - [ ] Criar repositório no GitHub
 - [ ] Configurar pipeline CI/CD
+- [ ] Review API contracts with the security team
 
 ## Decisões técnicas
 - Linguagem: Java 21 com Spring Boot 3
